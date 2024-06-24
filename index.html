@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="text-center">
+        <h1 class="my-4" id="titulo">Filtros</h1>
+      </header>
+      <div class="row">
+        <div class="col">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Digite o nome do carro</span>
+            </div>
+            <input type="text" class="form-control" id="basic-search" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center mb-4">
+          <button
+            id="fiat"
+            class="btn btn-primary d-inline-block mb-3 d-md-inline"
+            onclick="fiat()"
+          >
+            Fiat
+          </button>
+          <button
+            class="btn btn-primary d-inline-block mb-3 d-md-inline"
+            onclick="valoresFiltrados()"
+          >
+            Entre 50000 e 70000
+          </button>
+          <button
+            class="btn btn-primary d-inline-block mb-3 d-md-inline"
+            onclick="filterSedition()"
+          >
+            S Edition
+          </button>
+          <button
+            class="btn btn-primary d-inline-block mb-3 d-md-inline"
+            onclick="valoresiltradosAcima80()"
+          >
+            Acima de 80000
+          </button>
+          <button
+            class="btn btn-primary d-inline-block mb-3 d-md-inline"
+            onclick="valoresiltradosAbaixo100()"
+          >
+            Abaixo de 100000
+          </button>
+          <button
+            type="button"
+            class="btn btn-info d-inline-block mb-3 d-md-inline"
+            onclick="limparFiltros()"
+          >
+            Limpar Filtros
+          </button>
+        </div>
+      </div>
+      <div id="demo" class="row mb-3">
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://revistacarro.com.br/wp-content/uploads/2022/01/Renault-Kwid-Intense-2022_4.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Renault Kwid</h5>
+              Valor: 59090,00<br />
+              Versão: Zen<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://www.autodashboard.com.br/wp-content/uploads/2021/05/fiat-mobi-trekking-2022-2.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fiat Mobi</h5>
+              Valor: 60903,00<br />
+              Versão: Like<br />
+              Motor: 1.0 8V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://s3.sa-east-1.amazonaws.com/revista.mobiauto/Hyundai/HB20/Facelift/Hyundai+HB20+2023+proje%C3%A7%C3%A3o+traseira.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Hyundai HB20</h5>
+              Valor: 71190,00<br />
+              Versão: Sense<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://guiaauto.com.br/wp-content/uploads/2022/02/Argo-4.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fiat Argo</h5>
+              Valor: 70477,00<br />
+              Versão: 1.0<br />
+              Motor: 1.0 6V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://p2.trrsf.com/image/fget/cf/1200/675/middle/images.terra.com/2021/08/06/cross_gol.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Gol</h5>
+              Valor: 72690,00<br />
+              Versão: 1.0<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://guiaauto.com.br/wp-content/uploads/2022/02/Onix-Hatch-1.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Chevrolet Onix</h5>
+              Valor: 73820,00<br />
+              Versão: 1.0<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://www.webmotors.com.br/wp-content/uploads/2023/02/24183835/Chevrolet-Onix-1.0-9771-scaled.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Polo</h5>
+              Valor: 75700,00<br />
+              Versão: 1.0<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://www.webmotors.com.br/wp-content/uploads/2023/02/24183835/Chevrolet-Onix-1.0-9771-scaled.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Hyundai HB20S</h5>
+              Valor: 78890,00<br />
+              Versão: Vision<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://cdn.motor1.com/images/mgl/Q02nZ/s1/projecao-fiat-argo-e-cronos-reestilizados.webp"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fiat Cronos</h5>
+              Valor: 80325,00<br />
+              Versão: 1.3<br />
+              Motor: 1.3 8V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://fotos.jornaldocarro.estadao.com.br/wp-content/uploads/2021/09/20210219/2020-dacia-sandero-1160x653.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Renault Sandero</h5>
+              Valor: 80590,00<br />
+              Versão: S-Edition<br />
+              Motor: 1.0 12V
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://www.revistafullpower.com.br/wp-content/uploads/2019/06/ca01.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Chevrolet Camaro</h5>
+              Valor: 400000,00<br />
+              Versão: Sport<br />
+              Motor: V8 6.2L
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="container-img">
+              <img
+                src="https://www.planetcarsz.com/img/carros/2022/04/bmw-7-series-2023-008-20220421181131-1280x925.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">BMW</h5>
+              Valor: 800000,00<br />
+              Versão: Sport<br />
+              Motor: V8 6.2L
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
